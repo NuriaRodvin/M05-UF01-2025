@@ -22,7 +22,7 @@ Alice Aliaga Moreno
 - **Frameworks**: Spring, Django, React, Angular
 
 ## 📖 Wiki
-Accede a la Wiki del proyecto para explorar los detalles de cada lenguaje, IDE y framework. [Ver Wiki](https://github.com/NURIA RODVIN/ENTORNOS-DE-DESARROLLO/wiki)
+Accede a la Wiki del proyecto para explorar los detalles de cada lenguaje, IDE y framework. [Ver Wiki](https://github.com/NuriaRodvin/M05-UF01-2025/wiki)
 
 ## 🚀 Cómo Contribuir
 1. Realiza un **fork** de este repositorio.
