@@ -1,0 +1,184 @@
+# Creating a .txt file with JavaScript examples
+
+js_examples_txt = """
+# Guía de Programación en JavaScript
+
+Este documento contiene ejemplos básicos y fundamentales de programación en JavaScript.
+
+## 1. Estructura básica de un programa JavaScript
+
+// Estructura básica de un programa JavaScript
+console.log("¡Hola, Mundo!");
+
+## 2. Variables y tipos de datos
+
+// Variables y tipos de datos
+let numero = 10;
+let precio = 99.99;
+let letra = 'A';
+let esVerdadero = true;
+let texto = "Hola, JavaScript!";
+
+## 3. Estructuras de control
+
+### Condicionales
+
+let edad = 18;
+if (edad >= 18) {
+    console.log("Eres mayor de edad.");
+} else {
+    console.log("Eres menor de edad.");
+}
+
+// Switch-case
+
+let dia = 3;
+switch (dia) {
+    case 1: console.log("Lunes"); break;
+    case 2: console.log("Martes"); break;
+    default: console.log("Otro día");
+}
+
+// Bucles
+
+// Bucle for
+for (let i = 0; i < 5; i++) {
+    console.log("Iteración " + i);
+}
+
+// Bucle while
+let contador = 0;
+while (contador < 5) {
+    console.log("Contador: " + contador);
+    contador++;
+}
+
+// Bucle do-while
+do {
+    console.log("Número: " + contador);
+    contador++;
+} while (contador < 8);
+
+## 4. Funciones
+
+// Funciones
+function suma(a, b) {
+    return a + b;
+}
+
+console.log("Resultado: " + suma(5, 7));
+
+## 5. Objetos
+
+// Objetos
+let persona = {
+    nombre: "Juan",
+    edad: 30,
+    mostrarInfo: function() {
+        console.log("Nombre: " + this.nombre + ", Edad: " + this.edad);
+    }
+};
+
+persona.mostrarInfo();
+
+## 6. Herencia y clases
+
+// Herencia y clases
+class Animal {
+    hacerSonido() {
+        console.log("El animal hace un sonido");
+    }
+}
+
+class Perro extends Animal {
+    hacerSonido() {
+        console.log("El perro ladra");
+    }
+}
+
+let perro = new Perro();
+perro.hacerSonido();
+
+## 7. Polimorfismo
+
+// Polimorfismo
+class Figura {
+    calcularArea() {
+        throw "Método no implementado";
+    }
+}
+
+class Circulo extends Figura {
+    constructor(radio) {
+        super();
+        this.radio = radio;
+    }
+
+    calcularArea() {
+        return Math.PI * this.radio * this.radio;
+    }
+}
+
+let circulo = new Circulo(5);
+console.log("Área del círculo: " + circulo.calcularArea());
+
+## 8. Interfaces (Simulando interfaces en JavaScript)
+
+// Interfaces (Simulando con clases abstractas)
+class Vehiculo {
+    acelerar() {
+        throw "Método no implementado";
+    }
+}
+
+class Coche extends Vehiculo {
+    acelerar() {
+        console.log("El coche acelera.");
+    }
+}
+
+let coche = new Coche();
+coche.acelerar();
+
+## 9. Manejo de excepciones
+
+// Manejo de excepciones
+try {
+    let resultado = 10 / 0;
+    if (resultado === Infinity) {
+        throw new Error("No se puede dividir por cero");
+    }
+} catch (e) {
+    console.log("Error: " + e.message);
+} finally {
+    console.log("Fin del programa.");
+}
+
+## 10. Manejo de Archivos (Usando Node.js)
+
+// Manejo de Archivos (Node.js)
+const fs = require('fs');
+
+fs.writeFile('datos.txt', 'Hola, esto es un archivo en Node.js.', (err) => {
+    if (err) {
+        console.log("Error al escribir el archivo.");
+        return;
+    }
+    console.log("Archivo creado");
+
+    fs.readFile('datos.txt', 'utf8', (err, data) => {
+        if (err) {
+            console.log("Error al leer el archivo.");
+            return;
+        }
+        console.log(data);
+    });
+});
+"""
+
+# Create txt file
+txt_file_path = '/mnt/data/Guia_Programacion_JavaScript_GitHub.txt'
+with open(txt_file_path, 'w') as file:
+    file.write(js_examples_txt)
+
+txt_file_path
