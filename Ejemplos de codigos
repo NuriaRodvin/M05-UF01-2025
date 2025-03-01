@@ -1,0 +1,156 @@
+
+// 1. Estructura básica de un programa Java
+public class HolaMundo {
+    public static void main(String[] args) {
+        System.out.println("¡Hola, Mundo!");
+    }
+}
+
+// 2. Variables y tipos de datos
+int numero = 10;
+double precio = 99.99;
+char letra = 'A';
+boolean esVerdadero = true;
+String texto = "Hola, Java!";
+
+// 3. Estructuras de control
+// Condicionales
+int edad = 18;
+if (edad >= 18) {
+    System.out.println("Eres mayor de edad.");
+} else {
+    System.out.println("Eres menor de edad.");
+}
+
+// Switch-case
+int dia = 3;
+switch (dia) {
+    case 1: System.out.println("Lunes"); break;
+    case 2: System.out.println("Martes"); break;
+    default: System.out.println("Otro día");
+}
+
+// Bucles
+for (int i = 0; i < 5; i++) {
+    System.out.println("Iteración " + i);
+}
+
+int contador = 0;
+while (contador < 5) {
+    System.out.println("Contador: " + contador);
+    contador++;
+}
+
+do {
+    System.out.println("Número: " + contador);
+    contador++;
+} while (contador < 8);
+
+// 4. Métodos
+public class Calculadora {
+    public static int suma(int a, int b) {
+        return a + b;
+    }
+    public static void main(String[] args) {
+        System.out.println("Resultado: " + suma(5, 7));
+    }
+}
+
+// 5. Clases y Objetos
+class Persona {
+    String nombre;
+    int edad;
+
+    Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    void mostrarInfo() {
+        System.out.println("Nombre: " + nombre + ", Edad: " + edad);
+    }
+}
+
+// 6. Herencia
+class Animal {
+    void hacerSonido() {
+        System.out.println("El animal hace un sonido");
+    }
+}
+
+class Perro extends Animal {
+    void hacerSonido() {
+        System.out.println("El perro ladra");
+    }
+}
+
+// 7. Polimorfismo
+class Figura {
+    double calcularArea() {
+        return 0;
+    }
+}
+
+class Circulo extends Figura {
+    double radio;
+
+    Circulo(double radio) {
+        this.radio = radio;
+    }
+
+    @Override
+    double calcularArea() {
+        return Math.PI * radio * radio;
+    }
+}
+
+// 8. Interfaces
+interface Vehiculo {
+    void acelerar();
+}
+
+class Coche implements Vehiculo {
+    public void acelerar() {
+        System.out.println("El coche acelera.");
+    }
+}
+
+// 9. Excepciones
+public class ManejoExcepciones {
+    public static void main(String[] args) {
+        try {
+            int resultado = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Error: División por cero.");
+        } finally {
+            System.out.println("Fin del programa.");
+        }
+    }
+}
+
+// 10. Manejo de Archivos
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class ArchivoEjemplo {
+    public static void main(String[] args) {
+        try {
+            File archivo = new File("datos.txt");
+            if (archivo.createNewFile()) {
+                System.out.println("Archivo creado: " + archivo.getName());
+            }
+            FileWriter escritor = new FileWriter("datos.txt");
+            escritor.write("Hola, esto es un archivo en Java.");
+            escritor.close();
+            Scanner lector = new Scanner(archivo);
+            while (lector.hasNextLine()) {
+                System.out.println(lector.nextLine());
+            }
+            lector.close();
+        } catch (IOException e) {
+            System.out.println("Error al manejar el archivo.");
+        }
+    }
+}
