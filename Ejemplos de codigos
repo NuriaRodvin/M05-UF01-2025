@@ -1,36 +1,55 @@
 
-// 1. Estructura básica de un programa Java
+# Guía de Programación en Java
+
+Este documento contiene ejemplos básicos y fundamentales de programación en Java. Desde la estructura básica de un programa hasta conceptos más avanzados como excepciones y manejo de archivos.
+
+## 1. Estructura básica de un programa Java
+
+```java
 public class HolaMundo {
     public static void main(String[] args) {
         System.out.println("¡Hola, Mundo!");
     }
 }
+```
 
-// 2. Variables y tipos de datos
+## 2. Variables y tipos de datos
+
+```java
 int numero = 10;
 double precio = 99.99;
 char letra = 'A';
 boolean esVerdadero = true;
 String texto = "Hola, Java!";
+```
 
-// 3. Estructuras de control
-// Condicionales
+## 3. Estructuras de control
+
+### Condicionales
+
+```java
 int edad = 18;
 if (edad >= 18) {
     System.out.println("Eres mayor de edad.");
 } else {
     System.out.println("Eres menor de edad.");
 }
+```
 
-// Switch-case
+### Switch-case
+
+```java
 int dia = 3;
 switch (dia) {
     case 1: System.out.println("Lunes"); break;
     case 2: System.out.println("Martes"); break;
     default: System.out.println("Otro día");
 }
+```
 
-// Bucles
+### Bucles
+
+```java
 for (int i = 0; i < 5; i++) {
     System.out.println("Iteración " + i);
 }
@@ -45,33 +64,43 @@ do {
     System.out.println("Número: " + contador);
     contador++;
 } while (contador < 8);
+```
 
-// 4. Métodos
+## 4. Métodos
+
+```java
 public class Calculadora {
     public static int suma(int a, int b) {
         return a + b;
     }
+
     public static void main(String[] args) {
         System.out.println("Resultado: " + suma(5, 7));
     }
 }
+```
 
-// 5. Clases y Objetos
+## 5. Clases y Objetos
+
+```java
 class Persona {
-    String nombre;
-    int edad;
+    private String nombre;
+    private int edad;
 
-    Persona(String nombre, int edad) {
+    public Persona(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
     }
 
-    void mostrarInfo() {
+    public void mostrarInfo() {
         System.out.println("Nombre: " + nombre + ", Edad: " + edad);
     }
 }
+```
 
-// 6. Herencia
+## 6. Herencia
+
+```java
 class Animal {
     void hacerSonido() {
         System.out.println("El animal hace un sonido");
@@ -79,22 +108,24 @@ class Animal {
 }
 
 class Perro extends Animal {
+    @Override
     void hacerSonido() {
         System.out.println("El perro ladra");
     }
 }
+```
 
-// 7. Polimorfismo
-class Figura {
-    double calcularArea() {
-        return 0;
-    }
+## 7. Polimorfismo
+
+```java
+abstract class Figura {
+    abstract double calcularArea();
 }
 
 class Circulo extends Figura {
-    double radio;
+    private double radio;
 
-    Circulo(double radio) {
+    public Circulo(double radio) {
         this.radio = radio;
     }
 
@@ -103,19 +134,26 @@ class Circulo extends Figura {
         return Math.PI * radio * radio;
     }
 }
+```
 
-// 8. Interfaces
+## 8. Interfaces
+
+```java
 interface Vehiculo {
     void acelerar();
 }
 
 class Coche implements Vehiculo {
+    @Override
     public void acelerar() {
         System.out.println("El coche acelera.");
     }
 }
+```
 
-// 9. Excepciones
+## 9. Excepciones
+
+```java
 public class ManejoExcepciones {
     public static void main(String[] args) {
         try {
@@ -127,11 +165,12 @@ public class ManejoExcepciones {
         }
     }
 }
+```
 
-// 10. Manejo de Archivos
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+## 10. Manejo de Archivos
+
+```java
+import java.io.*;
 import java.util.Scanner;
 
 public class ArchivoEjemplo {
@@ -154,3 +193,17 @@ public class ArchivoEjemplo {
         }
     }
 }
+```
+
+---
+
+Este repositorio cubre conceptos fundamentales de Java, desde lo más básico hasta características avanzadas. Puedes utilizar estos ejemplos como referencia al aprender o practicar programación en Java.
+
+## Cómo ejecutar el código
+
+1. Clona el repositorio a tu máquina local.
+2. Abre un IDE como IntelliJ IDEA o Eclipse.
+3. Copia el código en una nueva clase Java y ejecútalo.
+
+Si tienes dudas o preguntas, no dudes en abrir un *issue* en el repositorio.
+
